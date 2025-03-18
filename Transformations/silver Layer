@@ -1,2 +1,2 @@
 silver Layer:
-Transformations in databricks
+Read the data from bronze and transfrom and write in silver
