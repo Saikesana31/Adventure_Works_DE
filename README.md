@@ -52,35 +52,22 @@ In **Azure synapse Analytics**,I created SQL scripts like :
 - `create schema.sql`, `External Table.sql`, and `create views gold.sql` build optimized star schema views for reporting.
   
     - `create views gold.sql` uses the **OPENROWSET** function to access the data(parquet files) in Azure         data lake storage providing a sql interface over data lake without data duplication and then used          these view to create a external tables to view data for improved query performance and BI reporting.
-    - `External Table.sql` we pushed the data to gold layer inform of external table.
--Azure Synapse Analytics serves as the analytics engine for your data lakehouse, providing serverless sql pool feature.
+    - `External Table.sql` we pushed the data to gold layer inform of external table.I implemented master
+      key encryption and database scoped credentials for secure data access.File format definition with          Snappy compression for **optimized** performance
+
+- Secure access patterns using managed identities(**SQL END POINTS**)
+- Azure Synapse Analytics serves as the analytics engine for your data lakehouse, providing serverless sql pool feature
+
+  ![Synapse](./Images/synapse.png)
 
 ---
 
 **Step-4:** Visualization-`Power BI`
 ---
+- Consumed data from Gold layer and creates a professional dashboard with visuals on:
+      - Sales trends
+      - Product 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 🔧 Tools & Technologies
-- **Azure Data Factory (ADF)**: Data orchestration and ingestion from dynamic GitHub sources.
-- **Azure Blob Storage**: Bronze layer for raw data.
-- **SQL Scripts**: Schema creation, gold layer transformations, and view generation.
-- **Power BI**: Visual storytelling and dashboards.
-- **GitHub**: Source for dynamic CSV datasets.
-
----
 
 
 ### 4. Visualization – Power BI
@@ -92,6 +79,14 @@ In **Azure synapse Analytics**,I created SQL scripts like :
 
 ---
 
+## 🔧 Tools & Technologies
+- **Azure Data Factory (ADF)**: Data orchestration and ingestion from dynamic GitHub sources.
+- **Azure Blob Storage**: Bronze layer for raw data.
+- **SQL Scripts**: Schema creation, gold layer transformations, and view generation.
+- **Power BI**: Visual storytelling and dashboards.
+- **GitHub**: Source for dynamic CSV datasets.
+
+---
 ## 🚀 Key Features
 
 - ✅ Automated ingestion pipeline from GitHub using dynamic parameters
@@ -101,27 +96,8 @@ In **Azure synapse Analytics**,I created SQL scripts like :
 
 ---
 
-## 📌 Future Enhancements
-
-- Add pipeline monitoring and alerting in ADF
-- Automate Power BI dataset refresh with Azure Synapse/Logic Apps
-- Integrate Databricks-based advanced analytics (RFM, clustering)
-
----
-
-## 📂 How to Use
-
-1. Update your GitHub raw URLs in `git.json`
-2. Upload pipeline JSON into Azure Data Factory
-3. Run pipeline to populate data into Bronze layer
-4. Use SQL scripts to build schema and views
-5. Open Power BI file and update data source paths
-6. Publish Power BI dashboard for stakeholders
-
----
-
 ## 📬 Author
-**[Your Name]**  
-Data Engineer | Cloud Analytics Enthusiast  
-[LinkedIn Profile](https://www.linkedin.com/in/your-link)  
+**Sai Kesana**  
+Data Engineer 
+[LinkedIn Profile](www.linkedin.com/in/saikesana)  
 
