@@ -55,7 +55,7 @@ In **Azure synapse Analytics**,I created SQL scripts like :
     - `External Table.sql` we pushed the data to gold layer inform of external table.I implemented master
       key encryption and database scoped credentials for secure data access.File format definition with          Snappy compression for **optimized** performance
 
-- Secure access patterns using managed identities(**SQL END POINTS**)
+- Secure access patterns using managed identities
 - Azure Synapse Analytics serves as the analytics engine for your data lakehouse, providing serverless sql pool feature
 
   ![Synapse](./Images/synapse.png)
@@ -64,32 +64,29 @@ In **Azure synapse Analytics**,I created SQL scripts like :
 
 **Step-4:** Visualization-`Power BI`
 ---
-- Consumed data from Gold layer and creates a professional dashboard with visuals on:
-      - Sales trends
-      - Product 
-
-
-
-### 4. Visualization – Power BI
+- Used **SQL END POINTS** to establish a connection between **Synapse** and **POWER BI**
+- Consumed data from Gold layer and creates a professional dashboard with visuals.
 - `AdventureWorks_PowerBI_reporting.pbix` includes:
-  - Sales trends and territory-wise revenue
-  - Customer segmentation
-  - Product performance
-  - Returns and profitability dashboards
+    - Sales trends and territory-wise revenue
+    - Customer segmentation
+    - Product performance
+    - Returns and profitability dashboards
 
 ---
 
 ## 🔧 Tools & Technologies
 - **Azure Data Factory (ADF)**: Data orchestration and ingestion from dynamic GitHub sources.
 - **Azure Blob Storage**: Bronze layer for raw data.
+- **Azure Databricks** – Data transformation (Silver Layer) 
 - **SQL Scripts**: Schema creation, gold layer transformations, and view generation.
 - **Power BI**: Visual storytelling and dashboards.
 - **GitHub**: Source for dynamic CSV datasets.
 
 ---
+
 ## 🚀 Key Features
 
-- ✅ Automated ingestion pipeline from GitHub using dynamic parameters
+- ✅ Automated Data ingestion pipeline from GitHub using dynamic parameters
 - ✅ Layered data architecture (Bronze → Silver → Gold)
 - ✅ Real-time insights using Power BI
 - ✅ Reusable SQL scripts for schema, external tables, and reporting views
@@ -98,6 +95,6 @@ In **Azure synapse Analytics**,I created SQL scripts like :
 
 ## 📬 Author
 **Sai Kesana**  
-Data Engineer 
+Data Engineer    
 [LinkedIn Profile](www.linkedin.com/in/saikesana)  
 
