@@ -50,8 +50,15 @@ and Then inside the foreach activity u apply **`copydata`** Activity
 ---
 In **Azure synapse Analytics**,I created SQL scripts like :
 - `create schema.sql`, `External Table.sql`, and `create views gold.sql` build optimized star schema views for reporting.
-Here,
-    - `create views gold.sql` uses the **OPENROWSET** function to acess the 
+  
+    - `create views gold.sql` uses the **OPENROWSET** function to access the data(parquet files) in Azure         data lake storage providing a sql interface over data lake without data duplication and then used          these view to create a external tables to view data for improved query performance and BI reporting.
+    - `External Table.sql` we pushed the data to gold layer inform of external table.
+-Azure Synapse Analytics serves as the analytics engine for your data lakehouse, providing serverless sql pool feature.
+
+---
+
+**Step-4:** Visualization-`Power BI`
+---
 
 
 
@@ -75,20 +82,6 @@ Here,
 
 ---
 
-## 📁 Project Structure
-
-### 1. Bronze Layer – Raw Data Ingestion
-- Utilizes **dynamic pipelines in ADF** (`Dynamic_data_Bronze.json`) to pull data from GitHub links.
-- **`git.json`** stores metadata with URLs, output file names, and sink paths.
-- `ForEach` activity dynamically loops through the URLs and copies CSVs to Blob Storage using HTTP sources and sinks.
-
-### 2. Silver Layer – Data Transformation
-- Intermediate transformations handled via Databricks notebooks (`Transformation_silver.dbc` - not fully explored here).
-- Cleansing, normalization, and type handling are performed.
-
-### 3. Gold Layer – Schema & Views
-- SQL scripts `create schema.sql`, `External Table.sql`, and `create views gold.sql` build optimized star schema views for reporting.
-- Data is logically structured into **fact** and **dimension** tables.
 
 ### 4. Visualization – Power BI
 - `AdventureWorks_PowerBI_reporting.pbix` includes:
